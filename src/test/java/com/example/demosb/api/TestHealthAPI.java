@@ -20,7 +20,7 @@ public class TestHealthAPI {
 	private TestRestTemplate testRestTemplate;
 
 	@Test
-	public void getClustersShouldReturnEmptyList() {
+	public void healthCheck() {
 		ResponseEntity<String> response = testRestTemplate.getForEntity("/api/v1/health", String.class);
 		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
 		assertThat(response.getBody()).isEqualTo(HealthAPI.HEALTH_OK_MSG);
